@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILI MONT - gradevinska tvrtka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #398ae6;
+            --dark: #1d3557;
+            --light: #f1faee;
+            --accent: #457b9d;
+            --secondary: #a8dadc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--primary);
+            color: white;
+            border: #398ae6;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: white;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .mobile-menu div {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 95vh;
+    transition: background-image 1s ease-in-out;
+}
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid gray;        
+    padding: 30px;                  
+    border-radius: 10px;           
+    background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .hero-content h1 {
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Testimonials Section */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 50px auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--primary);
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .client-role {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .member-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-img img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 25px;
+        }
+        
+        .member-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            margin-bottom: 40px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.2);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-desc {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text {
+                order: 2;
+            }
+            
+            .about-image {
+                order: 1;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 80px;
+                background: white;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                height: 85vh;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">MILI<span>MONT</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Početna</a></li>
+                    <li><a href="onama.html">O nama</a></li>
+                    <li><a href="#services">Usluge</a></li>
+                    <li><a href="#projects">Projekti</a></li>
+                    <li><a href="#testimonials">Recenzije</a></li>
+                    <li><a href="#team">Naš tim</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pocetna sekcija -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Gradite svoje snove iz temelja</h1>
+                <p>Mi smo profesionalna građevinska tvrtka s više godina iskustva u pružanju kvalitetnih građevinskih projekata diljem zemlje.</p>
+                <a href="#contact" class="btn">Pošaljite ponudu</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    const hero = document.getElementById("home");
+    const images = [
+        "slike/slika1.jpg",
+        "slike/slika2.jpg",
+        "slike/slika3.webp",
+        "slike/slika4.jpg",
+        "slike/slika5.jpg",
+        "slike/slika6.jpg"
+    ];
+    let current = 0;
+
+    function changeBackground() {
+        hero.style.backgroundImage = `url(${images[current]})`;
+        current = (current + 1) % images.length;
+    }
+
+    changeBackground();
+    setInterval(changeBackground, 4000);
+</script>
+
+    <!-- O nama sekcija -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>O nama</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Mili Mont je građevinska tvrtka s dugogodišnjim iskustvom u industriji, posvećena pružanju visokokvalitetnih građevinskih usluga. Naša misija je izgraditi prostore koji ne samo da zadovoljavaju visoke standarde kvalitete, već i nadmašuju očekivanja naših klijenata.</p>
+                    <p>Svaki projekt koji realiziramo, bilo da je riječ o stambenom, poslovnom ili industrijskom objektu, temelji se na čvrstoj predanosti kvaliteti, preciznosti i sigurnosti. Naš tim stručnjaka koristi najnoviju tehnologiju i inovativne pristupe kako bi osigurao da svaki projekt bude završen na vrijeme i u okviru budžeta.</p>
+                    <p>Mili Mont vjeruje u transparentnost, otvorenu komunikaciju i čvrste odnose s klijentima. Naša filozofija je jednostavna – graditi s povjerenjem i odgovornošću.</p>
+                    <p>Kao vaš partner u izgradnji, cilj nam je biti oslonac na svakom koraku, od početne ideje do finalnog projekta. S nama možete biti sigurni da vaši projekti neće samo biti završeni, već će biti izgrađeni s brigom i strašću za kvalitetom.</p>
+                    <a href="#services" class="btn">Naše usluge</a>
+                </div>
+                <div class="about-image">
+                    <img src="slike/tim.jpg" alt="Naš tim">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usluge sekcija -->
+    <section id="services" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center">Usluge</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="slike/Stambena izgradnja.avif" alt="Stambena izgradnja">
+                    </div>
+                    <div class="service-content">
+                        <h3>Stambena izgradnja</h3>
+                        <p>Od domova po narudžbi do renoviranja, oživljavamo vaš dom iz snova s ​​preciznošću i pažnjom.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="slike/Komercijalna gradanja.avif" alt="Komercijalna gradnja">
+                    </div>
+                    <div class="service-content">
+                        <h3>Komercijalna gradnja</h3>
+                        <p>Izgradnja funkcionalnih, atraktivnih prostora za tvrtke svih veličina, na vrijeme i unutar proračuna.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="slike/Renoviranje interijera.jpg"    alt="Renoviranje interijera">
+                    </div>
+                    <div class="service-content">
+                        <h3>Renoviranje interijera</h3>
+                        <p>Preuredite svoj postojeći prostor s našim stručnim uslugama renoviranja i preuređenja.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="slike/Arhitektonsko projektiranje.jpg" alt="Arhitektonsko projektiranje">
+                    </div>
+                    <div class="service-content">
+                        <h3>Arhitektonsko projektiranje</h3>
+                        <p>Naš dizajnerski tim stvara funkcionalne, lijepe prostore skrojene prema vašim potrebama.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="slike/Upravljanje građenjem.avif" alt="Upravljanje građenjem">
+                    </div>
+                    <div class="service-content">
+                        <h3>Upravljanje građenjem</h3>
+                        <p>Stručni nadzor vašeg projekta od planiranja do završetka, osiguravajući kvalitetu i učinkovitost.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="slike/Zelena gradnja.jpg" alt="Zelena gradnja">
+                    </div>
+                    <div class="service-content">
+                        <h3>Zelena gradnja</h3>
+                        <p>Održive metode gradnje i materijali za ekološki osviještene projekte.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projekti sekcija -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center">Projekti</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="slike/Luksuzna rezidencija.jpg" alt="Luxury Home Project">
+                    <div class="project-overlay">
+                        <h3>Luksuzna rezidencija</h3>
+                        <p>Obiteljska kuća od 500 kvadratnih metara s najmodernijim sadržajima</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="slike/Sjedište poduzeća.jpg" alt="Office Building">
+                    <div class="project-overlay">
+                        <h3>Sjedište poduzeća</h3>
+                        <p>Poslovna zgrada od 15 katova u centru grada</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="slike/Otmjeni restoran.webp" alt="Restaurant Renovation">
+                    <div class="project-overlay">
+                        <h3>Otmjeni restoran</h3>
+                        <p>Kompletna renovacija i nadogradnja kuhinje i restorana</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="slike/Obrazovna ustanova.webp" alt="School Building">
+                    <div class="project-overlay">
+                        <h3>Obrazovna ustanova</h3>
+                        <p>Obrazovni objekt s modernim učionicama</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="slike/Apartmani.jpg" alt="Apartment Complex">
+                    <div class="project-overlay">
+                        <h3>Apartmani</h3>
+                        <p>Luksuzni kompleks apartmana</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="slike/Hotel sa konfesrecncijskom dvoranom.jpg" alt="Hotel Construction">
+                    <div class="project-overlay">
+                        <h3>Hotel</h3>
+                        <p>Hotel s konferencijskim sadržajima</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Recenzije sekcija -->
+    <section id="testimonials" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center">Što kažu klijenti...</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <img src="slike/Klijent.jpg" alt="Client" class="client-img">
+                    <p class="quote">"MiliMont je transformirao naš zastarjeli ured u moderan, funkcionalan prostor koji naš tim voli. Profesionalno su vodili svaki aspekt projekta i isporučili na vrijeme."</p>
+                    <p class="client-name">Ivana Ivanić</p>
+                    <p class="client-role">Tehnološke inovacije</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tim skecija -->
+    <section id="team" class="section">
+        <div class="container">
+            <h2 class="text-center">Naš tim</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="slike/MIlicevic.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Petar</h3>
+                        <h3 class="member-name">Miličević</h3>
+                        <p class="member-role">Osnivač & CEO</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/_petarmilicevic_/" target="_blank">
+                            <i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="slike/Vukancic.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Nikola Vukančić</h3>
+                        <p class="member-role">Glavni arhitekt</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/nikolavukancic/" target="_blank">
+                            <i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="slike/Zoric.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Ivan</h3>
+                        <h3 class="member-name">Zorić</h3>
+                        <p class="member-role">Voditelj projekta</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/ivan_zoricc/" target="_blank">
+                            <i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="slike/Marangunic.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Filip Marangunić</h3>
+                        <p class="member-role">Dizajner interijera</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/marangunic_/" target="_blank">
+                            <i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcija kontakt -->
+    <section id="contact" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center">Info</h2>
+            <div class="contact-content">
+                <div>
+                    <div class="contact-info">
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Lokacija</h3>
+                                <p>Prkanj 61, Hrvatska, 10250 Ježdovec</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Kontakt</h3>
+                                <p>099 851 8371</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                            <h3>Mail</h3>
+                            <p>milimont@gmail.com</p>
+                            </div>
+                        </div>
